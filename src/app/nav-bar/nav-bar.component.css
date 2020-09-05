@@ -1,0 +1,32 @@
+.navTabWidth{
+    width: auto;
+}
+
+ul{
+    margin-top: 1%
+}
+
+span{
+    margin-top: -5px;
+    margin-left: -5px;
+    border: white solid 2px;
+}
+
+.logo{
+    color: #000000;
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+#main {
+    transition: margin-left .5s;
+    margin-left: 0px;
+}
+
+a{
+    cursor: pointer;
+}

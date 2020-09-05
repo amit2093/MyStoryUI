@@ -1,0 +1,35 @@
+{
+    "data":
+        [
+            {
+                "id":1,
+                "image":"https://ksassets.timeincuk.net/wp/uploads/sites/55/2017/10/GettyImages-820836428-920x584.jpg",
+                "title":"Road Trip to Bangalore",
+                "uploaded_by":"",
+                "other_images":
+                            [
+                                "","",""
+                            ]
+            },
+            {
+                "id":1,
+                "image":"https://avatars0.githubusercontent.com/u/18455699?s=460&v=4",
+                "title":"A Well Spent Day..",
+                "uploaded_by":"",
+                "other_images":
+                            [
+                                "","",""
+                            ]
+            },
+            {
+                "id":1,
+                "image":"https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+                "title":"My birthday, an event.",
+                "uploaded_by":"",
+                "other_images":
+                            [
+                                "","",""
+                            ]
+            }
+        ]
+}

@@ -1,0 +1,82 @@
+<div id="mySidenav" class="sidenav">
+  <strong class="sidebar-heading" (click)="openCloseSidebar()">
+      <i class="col-md-6 material-icons md-25" style="cursor: pointer;">menu</i>
+  </strong>
+  <hr>
+  <div class="row" (click)="openDeshboard()">
+      <div class="flex-item">
+          <i class="material-icons md-20-side" data-toggle="tooltip" title="Dashboard">dashboard</i>
+      </div>
+      <div class="flex-item" id="sideLinks">
+          <p>Dashboard</p>
+      </div>
+  </div>
+  <div class="row" (click)="openAddNewPostComponent()">
+      <div class="flex-item">
+          <i class="material-icons md-20-side" data-toggle="tooltip" title="Add a new Feed">camera_roll</i>
+      </div>
+      <div class="flex-item" id="sideLinks">
+          <p>Add Feed</p>
+      </div>
+  </div>
+  <!-- <div class="row" (click)="openDeshboard()">
+      <div class="flex-item">
+          <i class="material-icons md-20-side" data-toggle="tooltip" title="Change Profile Pic">add_a_photo</i>
+      </div>
+      <div class="flex-item" id="sideLinks">
+          <p>Change Profile Picture</p>
+      </div>
+  </div> -->
+  <div class="row" (click)="openAccountSetting()">
+      <div class="flex-item">
+          <i class="material-icons md-20-side" data-toggle="tooltip" title="Account Setting">verified_user</i>
+      </div>
+      <div class="flex-item" id="sideLinks5">
+          <p>Account</p>
+      </div>
+  </div>
+  <div class="row" (click)="openPrivacySetting()">
+      <div class="flex-item">
+          <i class="material-icons md-20-side" data-toggle="tooltip" title="Privacy Setting">lock</i>
+      </div>
+      <div class="flex-item" id="sideLinks5">
+          <p>Privacy</p>
+      </div>
+  </div>
+  <div class="row" (click)="openNotification()">
+      <div class="flex-item">
+          <i class="material-icons md-20-side" data-toggle="tooltip" title="Notifications">notifications</i>
+      </div>
+      <div class="flex-item" id="sideLinks3">
+          <p>Notifications</p>
+      </div>
+  </div>
+  <div class="row" (click)="openMessage()">
+      <div class="flex-item">
+          <i class="material-icons md-20-side" data-toggle="tooltip" title="Message">email</i>
+      </div>
+      <div class="flex-item" id="sideLinks2">
+          <p>Message</p>
+      </div>
+  </div>
+  <div class="row" (click)="openToDoList()">
+      <div class="flex-item">
+          <i class="material-icons md-20-side" data-toggle="tooltip" title="Calendar">calendar_today</i>
+      </div>
+      <div class="flex-item" id="sideLinks4">
+          <p>Calendar</p>
+      </div>
+  </div>
+  <div class="row" (click)="openFeedback()">
+      <div class="flex-item">
+          <i class="material-icons md-20-side" data-toggle="tooltip" title="Feedback">feedback</i>
+      </div>
+      <div class="flex-item" id="sideLinks4">
+          <p>Feedback</p>
+      </div>
+  </div>
+</div>
+
+<div id="main1">
+  <ng-template #container></ng-template>
+</div>

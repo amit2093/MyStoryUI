@@ -1,0 +1,62 @@
+<!-- <div class="container"> -->
+  <div class="row" style="margin-top: 10px;">
+    <div class="col-md-4">
+      <p class="display-4">Chats</p>
+      <hr>
+      <div style="overflow-y: scroll; height: 485px;">
+        <div *ngFor="let message of allChats; let i = index" 
+          style="padding: 10px; margin-bottom: 10px; border-radius: 8px; background-color: #f5f5f5f5;"
+          (click)="getMessageContent(i)">
+          <!-- <div class="row"> -->
+            <!-- <img src="" class="messageImage"> -->
+            <p><strong>{{message.Profile_Name}}</strong></p>
+          <!-- </div> -->
+         
+          <!-- <div *ngFor="let msgGlance of messageGlance; let i = index" >
+            <p>{{msgGlance}}</p>
+          </div> -->
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-md-8">
+      <p class="display-4" style="float: right;">{{chatingWith | getFirstWordOfName }}</p>
+
+      <hr style="margin-top:83px">
+      <div style="overflow-y: scroll; height: 440px;">
+        <ul *ngFor="let msg of privateMessageArray" style="list-style-type: none;">
+          <li>
+            <!-- <div *ngFor="let msg of message.messages"> -->
+              <div *ngIf="msg.Profile_Key == 1; else sender" style="float: left;">
+                <div style="width: 100%;">
+                  <div class="talktext talk-bubble tri-right round btm-left">
+                    <p>{{msg.Message_Body}}</p>
+                    <p style="float: left; margin-top: 10px;">{{msg.Message_Date | date : 'dd/MM/yyyy'}}</p>
+                  </div>
+                </div>
+              </div>
+              <ng-template #sender style="float: right;">
+                <div style="width: 100%;">
+                  <div class="talktext talk-bubble tri-right round btm-right" style="float: right;">
+                    <p>{{msg.Message_Body}}</p>
+                    <p style="float: right; margin-top: 10px;">{{msg.Message_Date | date : 'dd/MM/yyyy'}}</p>
+                  </div>
+                </div>
+              </ng-template>
+            <!-- </div> -->
+          </li>
+        </ul>
+        <div class="writeMessage">
+          <div class="row">
+              <input type="text" #msg style="margin-left: 50px; width: 650px; height: 50px; border: none;
+                      border-color: transparent;" placeholder=" Message"
+                      />
+              <i class="material-icons" style="float:right; margin-top: 15px;"
+                 >send</i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- </div> -->

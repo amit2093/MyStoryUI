@@ -1,0 +1,149 @@
+<!-- 
+<input (keyup.enter) = "createPost(title)" #title type="text"> 
+
+<ul *ngFor = "let json of jsonPlaceHolder" class="list-group">
+  <li class="list-group-item">{{ json.title }}</li>
+</ul> -->
+
+<!-- 
+<nav class="navbar navbar-expand-sm bg-white navbar-white fixed-top">
+  <img src="https://image.freepik.com/free-icon/apple-logo_318-40184.jpg"
+  width="40px" height="40px">
+  <ul class="navbar-nav" >
+    <li class="nav-item">
+      <a class="nav-link" href="#" style="color:black">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" style="color:black">Link</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container-fluid" style="margin-top:80px">
+  <h3>Top Fixed Navbar</h3>
+  <p>A fixed navigation bar stays visible in a fixed position (top or bottom) independent of the page scroll.</p>
+  <h1>Scroll this page to see the effect</h1>
+</div> -->
+
+
+<!-- <i class="material-icons">account_circle</i> -->
+
+
+<!-- <div class="container"> -->
+
+<br>
+
+<div class="tab-content">
+  <div class="tab-pane container active">
+
+    <!-- subject and total views -->
+    <table style="width:100%">
+      <tr>
+        <th width="75%">
+          <span
+            (click)="goToProfilePage(oneFeed[0].feed_Uploaded_By.profile_Key)">{{oneFeed[0].feed_Uploaded_By.profile_Name}}</span>
+          <p class="display-4 Dots_3">{{ oneFeed[0].feed_Title }}</p>
+        </th>
+        <th width="25%">
+          Total Views<p class="display-4">{{ oneFeed[0].total_Views }}</p>
+        </th>
+      </tr>
+    </table>
+
+    <!-- taged people -->
+    <div *ngIf="tags.length == 1; else other">
+      <p class="font-weight-light"> with {{ tags[0] }} </p>
+    </div>
+    <ng-template #other>
+      <div class="showHoverTagList overlay" style="width: 25%;">
+        <p class="font-weight-light">with {{ tags[0] }} and {{ tags.length - 1 }} others</p>
+        <div class="tagFriends">
+          <ul class="list-group list-categories" *ngFor="let tag of tags; let i = index" style="position: relative;">
+            <li class="list-group-item"><a href=# (click)="goToProfilePage()"
+                class="text-body font-weight-light">{{tag}}</a></li>
+          </ul>
+        </div>
+      </div>
+    </ng-template>
+
+    <!-- story content -->
+    <p class="font-weight-normal text-body" style="position: relative; margin-top:50px;">
+      {{ oneFeed[0].feed_Description }}</p>
+
+    <!-- Images -->
+    <div class="col-md-12">
+      <div class="col-md-6" style="float:left; overflow-y: scroll; height:500px;">
+        <img src={{mainImage}} class="mainImage">
+
+        <!-- likes and total comments -->
+        <br>
+        <div class="row" style="padding-left: 20px">
+          <i class="fa fa-thumbs-up"> {{oneFeed[0].total_Likes}}</i>
+          <!-- <i class="fa fa-comment" style="padding-left: 20px"> {{oneFeed[0].totalComments}}</i> -->
+        </div>
+
+        <!-- comments -->
+        <br>
+        <div class="media p-1" *ngFor="let comment of allCommentsByFeedKey; let i = index">
+          <img src={{comment.comment_By.profile_Image_Url}} class="rounded-circle" style="width:10%;">
+          <div class="media-body" style="padding-left: 15px">
+            <h6 (click)="goToProfilePage(comment.comment_By.profile_Key)">
+              <strong>{{comment.comment_By.profile_Name}}</strong> <small style="float: right;"><i>
+                  {{comment.comment_Date | date : 'dd-MMM-yyyy'}}</i></small></h6>
+            <p>{{comment.comment_Body}}</p>
+            <i class="material-icons" style="float:right; margin-top: -10px" (click)="replyToComment(i)">reply</i>
+            <div class="media p-3" *ngIf="!comment.has_Replies" style="margin-top:40px">
+              <div class="media-body">
+                <ul *ngFor="let replies of comment.comment_Reply">
+                  <li>
+                    <div class="row">
+                      <img src={{replies.reply_By.profile_Image_Url}} class="rounded-circle"
+                        style="width:10%; height: 30px; margin-left: 15px">
+                      <div class="media-body" style="padding-left: 15px">
+                        <h6 (click)="goToProfilePage(replies.reply_By.profile_Key)">
+                          <strong>{{replies.reply_By.profile_Name}}</strong> <small
+                            style="float: right; padding-right: 15px"><i>{{replies.reply_Date | date : 'dd-MMM-yyyy'}}</i></small>
+                        </h6>
+                        <p>{{replies.reply_Body}}</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- write comment -->
+        <hr>
+        <p>Comment</p>
+        <input type="text" #newComment name="newComment" id="newComment" class="col-md-12" style="height:100px"
+          (keyup.enter)="postNewComment(newComment)">
+      </div>
+
+      <!-- other images -->
+      <div class="col-md-6" style="float: right; overflow-y: scroll; height:500px;">
+        <div class="row">
+          <div *ngFor="let img of oneFeed[0].image_Of_Feed_Key; let i = index">
+            <div class="col-md-3">
+              <img class="img-rounded otherImages" src={{img.image_Url}} (click)="getOtherImageClicked(i)">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- other feeds of a user -->
+    <p class="display-4" style="padding-left: 15px; margin-top: 10px;">Other Stories </p>
+    <div class="row" style="margin-top:20px">
+      <div class="col-md-4" *ngFor="let all of allFeeds.data; let i = index" (click)="clickedStory(all.id)">
+        <div class="thumbnail">
+          <img src={{all.image}} style="width:100%; height: 250px;">
+          <div class="caption">
+            <p>{{ all.title }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

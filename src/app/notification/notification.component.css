@@ -1,0 +1,49 @@
+.logo{
+    color: #000000;
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.notifications{
+    margin-top: 20px;
+}
+.notification-list, .n-user-list {
+    list-style: outside none none;
+    margin: 5px 0 0 0px;
+    padding: 0;
+}
+.notification-list > li {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 5px;
+    padding: 5px 0;
+}
+.media-body {
+    margin-left: 10px;
+}
+.media-heading{
+    margin-left: 0px;
+}
+.material-icons{
+    color: black;
+    font-size: 22px;
+    margin: 10px 0 0 0;
+}
+
+.rounded {
+    border-radius: 0.25rem;
+    height: 25px;
+    width: 30px;
+}
+
+.actionButton{
+    height: 30px;
+    min-width: 80px;
+    padding: 2px;
+    border-radius: 5px;
+    /* margin: -5px 0 0 20px; */
+}
+.n-user-list{margin-bottom:5px;}
+.n-user-list:after{clear:both; content:''; display:table;}
+.n-user-list li{float:left; margin-left: 15px;}
+.n-user-list li + li{margin-left:3px;}
+.n-user-list li a, .n-user-list li a:hober{text-decoration:none;}

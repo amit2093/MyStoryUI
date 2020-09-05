@@ -1,0 +1,121 @@
+<!-- <div class="main">  -->
+  <div class="row">
+    <div class="col-md-3 quickWatchTabs  border border-secondary">
+        <strong style="color: black;">Friends</strong><br><br>
+        <div class="row">
+            <i class="material-icons md-48" style="color: red">bar_chart</i>
+            <strong class="text-center quickView border border-secondary" style="background-color: rgb(231, 205, 231);">{{friends}}</strong>
+        </div>
+    </div>
+    <div class="col-md-3 quickWatchTabs  border border-secondary">
+        <strong style="color: black;">Friend Request</strong><br><br>
+        <div class="row">
+            <i class="material-icons md-48" style="color: green">bar_chart</i>
+            <strong class="text-center quickView border border-secondary" style="background-color: rgb(202, 228, 200);">{{friend_request}}
+                <!-- <ul class="list-friend-requests">   friend-requests
+                                    <li>Amit</li>
+                                    <li>Kratika</li>
+                                </ul> -->
+            </strong>
+        </div>
+    </div>
+    <div class="col-md-3 quickWatchTabs  border border-secondary">
+        <strong style="color: black;">Total Views</strong><br><br>
+        <div class="row">
+            <i class="material-icons md-48" style="color: blue">bar_chart</i>
+            <strong class="text-center quickView border border-secondary" style="background-color: rgb(131, 205, 231);">{{total_views}}</strong>
+        </div>
+    </div>
+    <div class="col-md-3 quickWatchTabs  border border-secondary">
+        <strong style="color: black;">Message</strong><br><br>
+        <div class="row">
+            <i class="material-icons  md-48" style="color: olive">bar_chart</i>
+            <strong class="text-center quickView border border-secondary" style="background-color: rgb(241, 172, 172);">{{total_unread_messages}}</strong>
+        </div>
+    </div>
+    <div class="col-md-3 quickWatchTabs  border border-secondary">
+        <strong style="color: black;">Notifications</strong><br><br>
+        <div class="row">
+            <i class="material-icons md-48" style="color: darkcyan">bar_chart</i>
+            <strong class="text-center quickView border border-secondary" style="background-color: rgb(235, 208, 160);">{{total_unseen_notifications}}</strong>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6" style="margin-top: 65px;">
+        <strong style="margin-left: 0px;">Feeds Report</strong>
+        <table class="FeedsStatusTable bg bg-info">
+            <tr>
+                <td class="tableHeaderAndRows">
+                    <select #selectElem (change)="getMonthValue(selectElem.value)" class="form-control" style="background-color: white; color: black"
+                        id="Month">
+                        <option *ngFor="let month of monthTest" value="{{month.value}}"><strong>{{month.month}}</strong></option>
+                    </select>
+                </td>
+                <td class="totalActivityHeader"><strong>{{feedReportArray?.feedsDetails.length}} Feeds</strong></td>
+            </tr>
+        </table>
+        <table class="table table-striped" style="width: 100%">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Views</th>
+                    <th>Likes</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let feedDetail of feedReportArray?.feedsDetails | paginate: { id: 'listing_pagination',
+                                            itemsPerPage: 8,
+                                            currentPage: page,
+                                            totalItems: totalResponses }; let i = index">
+                    <td style="cursor: pointer;" data-toggle="tooltip" 
+                        data-placement="top" title="{{feedDetail.name}}"
+                        (click)="drawChart(i)">{{feedDetail.name}}</td>
+                    <td>{{feedDetail.views}}</td>
+                    <td>{{feedDetail.likes}}</td>
+                    <td>{{feedDetail.date}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="margin-left: -30px; width: 100%">
+            <tr>
+                <td>
+                    <pagination-controls class="pagination justify-content-center" id="listing_pagination" maxSize="5"
+                        directionLinks="true" (pageChange)="page = $event">
+                    </pagination-controls>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="col-md-6">
+        <div id="chart_div" style="margin: 20px 0px 20px 0px"></div>
+        <table class="table table-striped" style="margin: 20px 0px 20px 0px">
+            <thead>
+                <tr>
+                    <th>Quick Controls</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="cursor: pointer;">Account Setting</td>
+                </tr>
+                <tr>
+                    <td style="cursor: pointer;">Privacy Setting</td>
+                </tr>
+                <tr>
+                    <td style="cursor: pointer;">Change Profile Pic</td>
+                </tr>
+                <tr>
+                    <td style="cursor: pointer;">Change Cover Pic</td>
+                </tr>
+                <tr>
+                    <td style="cursor: pointer;">Add a new feed</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- </div>  -->

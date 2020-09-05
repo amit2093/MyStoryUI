@@ -1,0 +1,100 @@
+
+  hr{
+    margin-top: 6px;
+  }
+
+  .quickWatchTabs{
+    border-radius: 10px; 
+    margin-top: -20px; 
+    margin: 10px; 
+    background-color: #fafafa;
+  }
+
+  @media screen and (max-height: 450px) {
+    .sidenav a {font-size: 18px;}
+  }
+
+  .flex-item:last-child {
+    margin-left: auto;
+    margin-top: 0px;
+    cursor: pointer;
+  }
+
+  p{
+      margin-left: -190px;
+      margin-top: -7px;
+  }
+
+  .FeedsStatusTable {
+    width:100%;
+    margin-top: 18px;
+  }
+
+  .tableHeaderAndRows {
+    padding: 25px 0 25px 25px;
+    text-align: left;
+    color: white;
+  }
+
+  .totalActivityHeader {
+    padding: 25px;
+    text-align: right;
+    color: white;
+  }
+
+  .quickView{
+    margin-left: 100px;
+    padding-left: 15px; 
+    padding-right: 15px; 
+    padding-top: 5px; 
+    width: auto; 
+    color: black;
+    min-width: 70px;
+    height: 35px; 
+    border-radius: 50px;
+  }
+
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+  }
+  
+  
+  .friend-requests:hover ul.list-friend-requests{
+    max-height: inherit;
+    opacity: 1;
+    z-index: 2;
+  }
+  
+  .list-friend-requests{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    opacity: 0;
+    z-index: 2;
+    overflow: hidden;
+    transition: opacity 300ms ease;
+  }
+
+  .pagination a:hover:not(.active) {background-color: #ddd;}
+
+  .material-icons.md-25 { font-size: 25px; margin-left: -25px; margin-top: 10px; padding-right: 10px; color: #000 }
+  .material-icons.md-20-side { font-size: 20px; margin-top: 0px; padding-right: 10px; color: #888 }
+  .material-icons.md-24 { font-size: 24px; }
+  .material-icons.md-32 { font-size: 32px; }
+  .material-icons.md-40 { font-size: 40px; }
+  .material-icons.md-48 { font-size: 48px; }
+
+  .material-icons.md-20-side:hover { font-size: 20px; margin-top: 0px; padding-right: 10px; color: red }
+
+
+
+
+
+
+
+
+

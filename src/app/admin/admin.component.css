@@ -1,0 +1,82 @@
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: margin-left .5s;
+    background-color: #fafafa;
+  }
+  
+  .sidenav .row {
+    padding-left: 32px;
+    padding-top: 25px;
+    text-decoration: none;
+    color: #000;
+    font: sans-serif;
+    display: flex;
+    transition: 0.3s;
+    font-size: 18px;
+  }
+  
+  .sidenav .row:hover {
+    color: #ff0000;
+  }
+
+  .sidenav .sidebar-heading{
+    position: absolute;
+    top: 0;
+    margin-top: 8px;
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+    font-size: 30px;
+    margin-left: 30px;
+  }
+
+  hr{
+    margin-top: 6px;
+  }
+
+  #main1 {
+    transition: margin-left .5s;
+    margin-left: 180px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav a {font-size: 18px;}
+  }
+
+  .flex-item:last-child {
+    margin-left: auto;
+    margin-top: 0px;
+    cursor: pointer;
+  }
+
+  p{
+      margin-left: -190px;
+      margin-top: -7px;
+  }
+
+ 
+
+.material-icons.md-25 { font-size: 25px; margin-left: -25px; margin-top: 10px; padding-right: 10px; color: #000000 }
+.material-icons.md-20-side { cursor: pointer; font-size: 20px; margin-top: 0px; padding-right: 10px; color: #888888 }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-32 { font-size: 32px; }
+.material-icons.md-40 { font-size: 40px; }
+
+.material-icons.md-20-side:hover { color: red }
+
+
+
+
+
+
+
+
+
+
+
+

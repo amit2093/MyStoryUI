@@ -1,0 +1,95 @@
+<!-- <app-profile></app-profile> -->
+<div class="container">
+    <app-nav-bar></app-nav-bar>
+    <div *ngIf="isWebCamOpen">
+        <div class="alert alert-info" style="width: 50%;">
+            <strong>Info!</strong> Video Call need to be implemented.
+        </div>
+
+        <!-- <webcam  style="width: 50px; height: 50px;"></webcam> -->
+    </div>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+</div>
+
+
+
+
+<!-- Chat button -->
+<div (click)="onShow()">
+    <i class="material-icons float" style="padding-top:20px; cursor: pointer;">chat</i>
+</div>
+
+<div class="chat-popup" *ngIf="show" id="chatPopupWindow">
+    <form class="form-container">
+        <div class="row">
+            <p class="col-md-6 display-4">Chat</p>
+            <i class="material-icons col-md-2 closeChatPopupButton" (click)="onCloseChatPopup()">close</i>
+        </div>
+        <p class="text text-secondary" style="padding-left: 5px;">Active {{ active_for_chat }}</p>
+        <div style="overflow-y: scroll; height: 450px;">
+            <ul class="list-group" *ngFor="let friend of onlineFriends; let i = index">
+                <li href=# class="list-group-item">
+                    <div class="row" style="margin-left: 0px; cursor: pointer;" (click)="openChatBoxPopup(i)">
+                        {{ friend.Profile_Name }}
+                        <i *ngIf="friend.Is_Online" class="material-icons onlineOfflineIndicator" style="color: green;">fiber_manual_record</i>
+                        <i *ngIf="!friend.Is_Online" class="material-icons onlineOfflineIndicator" style="color: red;">fiber_manual_record</i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+
+<div class="row floating-chat-window {{displaychatBox}}" id="floatingChatWindow">
+    <div *ngFor="let number of numbers" style="padding-bottom: 1px">
+
+        <div style="height: 400px; width: 300px; position: relative; 
+                  z-index: 10; border: 1px solid #e5e5e5;">
+            <div class="bg bg-light">
+                <div class="row" style="margin-left: 10px; padding-top: 10px">
+                    <p style="float: left; width: 70%; cursor: pointer;"><strong>{{ chat_with_name}}</strong></p>
+                    <i class="material-icons videoCallIcon" (click)="videoCall()">video_call</i>
+                    <i class="material-icons closeOpenChatWindow" (click)="closeOpenChatWindow()">close</i>
+                </div>
+            </div>
+
+            <hr style="margin-top: -1px; padding-left: 2px; padding-right: 2px">
+
+            <div style="overflow-y: scroll; 
+                     height: 280px; width: 295px; margin-top: -15px;
+                     background: white">
+                <ul *ngFor="let msg of privateMessageArray" style="list-style-type: none; ">
+                    <li>
+                        <div *ngIf="msg.Profile_Key == 1; else sender" style="float: left;">
+                            <div style="margin-left: -30px">
+                                <div class="talktext talk-bubble-left tri-right round btm-left">
+                                    <p>{{msg.Message_Body}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <ng-template #sender style="float: right;">
+                            <div style="width: 100%;">
+                                <div class="talktext talk-bubble-right tri-right round btm-right" style="float: right;  margin-right: 8px">
+                                    <p>{{msg.Message_Body}}</p>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <!-- </div> -->
+                    </li>
+                </ul>
+            </div>
+
+            <input type="text" placeholder=" Message" class="form-control" style="width: 280px; 
+                  margin-left: 9px; border-radius: 50px;
+                  position: relative; margin-top: 10px;">
+        </div>
+
+    </div>
+</div>
+
+<!-- <app-login-register></app-login-register> -->
+
+<!-- <app-messagae></app-messagae> -->
+
+<!-- <app-index-landing></app-index-landing> -->

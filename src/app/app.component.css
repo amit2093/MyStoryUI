@@ -1,0 +1,145 @@
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:gray;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.floating-chat-window{
+	position:fixed;
+	bottom:1px;
+	right:10px;
+	margin-top:-280px;
+	background: white; 
+	float: right;
+	margin-right: 100px; 
+}
+
+.chat-float-button{
+	margin-top:22px;
+}
+
+.closeChatPopupButton{
+	padding-top: 12px;
+	margin-left: 90px;
+	cursor: pointer;
+}
+
+.videoCallIcon{
+	float: right; 
+	width: 15%; 
+	cursor: pointer;
+	color: gray;
+}
+
+.closeOpenChatWindow{
+	float: right; 
+	width: 15%;
+	cursor: pointer;
+	color: gray;
+}
+  
+  /* The popup chat - hidden by default */
+.chat-popup {
+	display: block;
+	position: fixed;
+	bottom: 0;
+	right: 15px;
+	border: 2px solid #e5e5e5;
+}
+  
+  /* Add styles to the form container */
+  .form-container {
+	max-width: 300px;
+	width: 300px;
+	padding: 10px;
+	background-color: white;
+  }
+  
+	
+	::-webkit-scrollbar {
+    width: 0px;  
+    background: transparent;  
+  }  
+
+  .onlineOfflineIndicator{
+    margin-left: 225px;
+    margin-top: -20px
+  }
+  
+
+::-webkit-scrollbar {
+  width: 0px;  
+  background: transparent;  
+}
+
+
+.talk-bubble-left {
+	margin-bottom: 10px;
+  display: inline-block;
+  position: relative;
+	width: 200px;
+	border-radius: 8px;
+	height: auto;
+	background-color: #f5f5f5;
+}
+
+.talk-bubble-right {
+	margin-bottom: 10px;
+  display: inline-block;
+  position: relative;
+	width: 200px;
+	border-radius: 8px;
+	height: auto;
+	background-color: #d8bfd8	;
+}
+
+
+.tri-right.btm-left:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 0px;
+  right: auto;
+  top: -10px;
+	bottom: auto;
+	border: 12px solid;
+	border-color: transparent transparent transparent #f5f5f5;
+}
+
+.tri-right.btm-right:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: auto;
+	float: right;
+	right: 0px;
+	bottom: -6px;
+	border: 6px solid;
+	border-color: #d8bfd8 #d8bfd8 transparent transparent;
+}
+
+.talktext{
+  padding: 12px;
+	text-align: left;
+  line-height: 1.5em;
+}
+.talktext p{
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+}
+
+
+
+
+
+
+

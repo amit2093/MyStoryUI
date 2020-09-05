@@ -1,0 +1,50 @@
+[
+    {
+      "Profile_Name" : "Amit Saxena",
+      "Is_Online" : true
+    },
+    {
+      "Profile_Name" : "Kratika Chourasiya",
+      "Is_Online" : true
+    },
+    {
+      "Profile_Name" : "Niket Pandey",
+      "Is_Online" : false
+    },
+    {
+      "Profile_Name" : "Vartika Pandey",
+      "Is_Online" : true
+    },
+    {
+      "Profile_Name" : "Aniket Jawdekar",
+      "Is_Online" : false
+    },
+    {
+      "Profile_Name" : "VVM. Swarup",
+      "Is_Online" : true
+    },
+    {
+      "Profile_Name" : "Aditya V.",
+      "Is_Online" : true
+    },
+    {
+      "Profile_Name" : "ChandraJeet Singh",
+      "Is_Online" : false
+    },
+    {
+      "Profile_Name" : "Manoj Soni",
+      "Is_Online" : true
+    },
+    {
+      "Profile_Name" : "Himanshu Kumar",
+      "Is_Online" : false
+    },
+    {
+      "Profile_Name" : "Sajal Soni",
+      "Is_Online" : false
+    },
+    {
+      "Profile_Name" : "Abhay Thakur",
+      "Is_Online" : true
+    }
+  ]
