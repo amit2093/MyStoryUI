@@ -58,7 +58,6 @@
       ]
     },
     {
-      "totalFeeds": 1,
       "feedsDetails": [
         {
           "name": "December 2018 Test 1",
@@ -103,6 +102,13 @@
       ]
     },
     {
-      "feedsDetails": []
+      "feedsDetails": [
+        {
+          "name": "October 2018 Test 1",
+          "views": 741,
+          "likes": 15,
+          "date": "11 Oct, 2019"
+        }
+      ]
     }
   ]

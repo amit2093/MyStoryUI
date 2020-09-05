@@ -15,8 +15,12 @@ export class AllGetMethodsService {
     return this.http.get(this.BASE_URL+'/getAllFriends/'+Profile_Key);
   }
 
+  // getAllProfileForSearch(): Observable<any> {
+  //   return this.http.get(this.BASE_URL+'/getAllProfiles');
+  // }
+
   getAllProfileForSearch(): Observable<any> {
-    return this.http.get(this.BASE_URL+'/getAllProfiles');
+    return this.http.get('./assets/search.json');
   }
 
   getProfileById(Profile_Key): Observable<any> {

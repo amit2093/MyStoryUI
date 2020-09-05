@@ -4,8 +4,6 @@ import { AdminDashboardComponent } from '../admin-dashboard/admin-dashboard.comp
 import { MessagaeComponent } from '../messagae/messagae.component';
 import { NotificationComponent } from '../notification/notification.component';
 
-
-
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',

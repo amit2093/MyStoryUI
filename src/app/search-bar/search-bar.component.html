@@ -14,9 +14,9 @@
   </div>
 </div>
 <div style="height: 0px; width: 75%">
-  <ul class="list-group {{displaySearchList}} overlay" *ngFor="let friendSearch of allProfilesForSearch | searchPipe">
-    <li class="list-group-item" (click)="goToProfile(friendSearch.Profile_Key)">
-      {{ friendSearch.Profile_Name }}
+  <ul class="list-group {{displaySearchList}} overlay" *ngFor="let search of allProfilesForSearch | searchPipe">
+    <li class="list-group-item" (click)="goToProfile(search.Profile_Key)">
+      {{ search.Profile_Name }}
     </li>
   </ul>
 </div>
